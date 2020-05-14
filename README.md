@@ -3,6 +3,7 @@
  [Click here](https://github.com/lolipopluxury/Diary-of-taro/blob/master/README-EN.md) to get English version
  
  **本日记主要用来记载第一次使用Taro开发小程序时踩过的坑，欢迎各位道友交流学习，本人邮箱i104j588@163.com**
+ 
  **本文仅发布于GitHub，转载请注明出处**
  
 在我的理解中，小程序是一种网页的特殊形态，由HTML，CSS 和 JavaScript 构成。但是不同的平台为其旗下的小程序构建了不同的语法，接近原生语言。缺点是显而易见的，若采用原生小程序，每个平台都需要对应的一套代码，且对不熟悉Vue的开发者不够友好。而使用Taro框架则在一定程度上为这些问题提供了答案。
