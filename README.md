@@ -1,4 +1,4 @@
-# Build a project with Taro, Taro-UI and Mobx
+# Build a miniprogram with Taro, Taro-UI and Mobx
 
 Taro is a framework for **miniprogram**. Before we start with Taro, it is necessary to learn what is miniprogram. The miniprogram is a kind of application which is avaliable without downloading. Actually it is a special form of website, and basicly consisted of html, css and javascript. Usually miniprograms are attached to the application provided by a specific company. This means that the original syntx of miniprograms on different platforms is different but with common regulations. We can find it easily on the doc center of [alipay mini](https://opendocs.alipay.com/mini/introduce) and [weapp mini](https://developers.weixin.qq.com/miniprogram/dev/framework/). Developers need to rewrite a new set of code when launching the app on a different platform. This increase the cost of both developing and maintain. Therefore, we need to find a way to develop on multi-platform.
 
