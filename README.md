@@ -1,31 +1,35 @@
-# Build a miniprogram with Taro, Taro-UI and Mobx
+# 使用 Taro, Taro-UI 和 Mobx 构建微信小程序
 
-Taro is a framework for **miniprogram**. Before we start with Taro, it is necessary to learn what is miniprogram. The miniprogram is a kind of application which is avaliable without downloading. Actually it is a special form of website, and basicly consisted of html, css and javascript. Usually miniprograms are attached to the application provided by a specific company. This means that the original syntx of miniprograms on different platforms is different but with common regulations. We can find it easily on the doc center of [alipay mini](https://opendocs.alipay.com/mini/introduce) and [weapp mini](https://developers.weixin.qq.com/miniprogram/dev/framework/). Developers need to rewrite a new set of code when launching the app on a different platform. This increase the cost of both developing and maintain. Therefore, we need to find a way to develop on multi-platform.
+ [Click here](https://github.com/lolipopluxury/Diary-of-taro/blob/master/README-EN.md) to get English version
+ 
+ **本日记主要用来记载第一次使用Taro开发小程序时踩过的坑，欢迎各位道友交流学习，本人邮箱i104j588@163.com**
+ 
+在我的理解中，小程序是一种网页的特殊形态，由HTML，CSS 和 JavaScript 构成。但是不同的平台为其旗下的小程序构建了不同的语法，接近原生语言。缺点是显而易见的，若采用原生小程序，每个平台都需要对应的一套代码，且对不熟悉Vue的开发者不够友好。而使用Taro框架则在一定程度上为这些问题提供了答案。
 
-Fortunately，Taro gives a solution. It can build into different kind of miniprogram. What's more, Taro is **react-style**. Thus, it is easy to learn and much more friendly than the original syntx provided officially. Of course, there are certain drawbacks of Taro. As a price of crossing platforms, it mainly supports the common features of different miniprogram. Some unique features like _rich editor_ performs quite terriblely in Taro. So it's important for developers to consider the requires of their application before using this framwork.
+Taro是一个遵循react语法的跨平台小程序框架，对于熟悉react的开发者容易上手。其中内置了mobx、redux等数据流方案，也可以自行配置使用dva处理数据。但是Taro的缺点也是明显的，作为跨平台的代价，Taro支持大部分平台共有的特性，但是在Taro中使用例如 _富文本编辑器_ 较为独特的功能时显得难以处理。Taro并不一定是小程序开发的最优解，在使用前应该考虑项目的需求，谨慎选择。
 
-## Quick Start
+## 快速启动
 
-Taro is based on node.js, please ensure the version is higher than 8.0.0
+Taro基于node.js,请保证node版本在8.0.0以上
 
-Firstly, we need to use _npm_ or _yarn_ to install _@tarojs/cli_ globally.
+首先使用 _npm_ 或者 _yarn_ 全局安装 _@tarojs/cli_ 。 虽然可以单独使用npm对taro进行管理，但是体验效果略逊一筹，使用哪种方式因人而异。
 ```
 # Use npm install CLI
 $ npm install -g @tarojs/cli
 # OR use yarn 
 $ yarn global add @tarojs/cli
 ```
-For developers in China, when errors associated with sass rise, please try after mirror-config-china installed
+国内用户出现sass相关报错时，可以安装mirror-config-china后重试
 ```
 $ npm install -g mirror-config-china
 ```
-Then init the project with 
+使用以下命令初始化项目
 ```
 $ taro init myApp
 ```
-There are some options we need to notice
+我们需要注意初始化时的选项
 
-This is wrting the introduction
+第一步，输入项目介绍。没啥好说的
 ```
 PS D:\Taro> taro init myApp
 �👽 Taro v2.1.3
@@ -37,7 +41,7 @@ Need help? Go and open issue: https://github.com/NervJS/taro/issues/new
 ? 请输入项目介绍！
 ```
 
-The next step is choosing whether using typescript. Even through typescript is more and more popular, in Taro 2.1, the team doesn't plan to rewrite the framework in typescript. Typescript is avaliable but not recommended.
+第二步，选择是否使用typescript。目前Taro作者并没有打算使用ts重写框架，ts可以用但是没有必要。虽然ts越来越流行，但是对于初学者来说可能是自找麻烦。不建议使用ts。
 ```
 PS D:\Taro> taro init myApp
 �👽 Taro v2.1
@@ -50,7 +54,7 @@ Need help? Go and open issue: https://github.com/NervJS/taro/issues/new
 ? 是否需要使用 TypeScript ？ No
 ```
 
-The third step is choosing CSS extension language. Taro-UI is a UI library provided by the same team of Taro, and it is written in sass. Thus, when we want to introduce Taro-UI into our project, we should use sass to make them compatible.  
+第三步，选择css预处理器。我知道有些童鞋觉得less比较高大上，但是在Taro中建议使用sass，特别是引入Taro-UI时。Taro-UI由sass编写，使用sass可以更好地兼容Taro-UI，以及Taro-UI提供的自定义主题。
 ```
 PS D:\Taro> taro init myApp
 �👽 Taro v2.1
@@ -67,7 +71,7 @@ Need help? Go and open issue: https://github.com/NervJS/taro/issues/new
   Stylus
   无
 ```
-After choosing sass, it gives us the options for data templates. Here we can use mobx. It's easy for new developers. If redux is introduced, we can use dva in our app to simiplify data flow.
+最后是选择数据模板，本日记中选择mobx，简单好用。剩下的请各位自行研究。
 ```
 PS D:\Taro> taro init myApp
 �👽 Taro v2.1
@@ -86,7 +90,7 @@ Need help? Go and open issue: https://github.com/NervJS/taro/issues/new
   wxcloud    
   wxplugin   
 ```
-Wait for a few minitues to finalise the setting. **In rest part of the diary, we will build a miniprogram on wechat and hightlight the traps when using this framework**
+等待几分钟令项目完成初始化。
 ```
 PS D:\Taro> taro init myApp
 �👽 Taro v2.1
