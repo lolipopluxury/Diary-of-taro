@@ -86,7 +86,7 @@ Need help? Go and open issue: https://github.com/NervJS/taro/issues/new
   wxcloud    
   wxplugin   
 ```
-Wait for a few minitues to finalise the setting.
+Wait for a few minitues to finalise the setting. **In rest part of the diary, we will build a miniprogram on wechat and hightlight the traps when using this framework**
 ```
 PS D:\Taro> taro init myApp
 �👽 Taro v2.1
