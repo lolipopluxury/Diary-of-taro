@@ -4,7 +4,7 @@ Taro is a framework for **miniprogram**. Before we start with Taro, it is necess
 
 Fortunately，Taro gives a solution. It can build into different kind of miniprogram. What's more, Taro is **react-style**. Thus, it is easy to learn and much more friendly than the original syntx provided officially. Of course, there are certain drawbacks of Taro. As a price of crossing platforms, it mainly supports the common features of different miniprogram. Some unique features like _rich editor_ performs quite terriblely in Taro. So it's important for developers to consider the requires of their application before using this framwork.
 
-##Quick Start
+## Quick Start
 
 Taro is based on node.js, please ensure the version is higher than 8.0.0
 
