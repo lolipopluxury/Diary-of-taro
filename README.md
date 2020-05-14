@@ -1,39 +1,5 @@
-## Welcome to GitHub Pages
+# Build a project with Taro, Taro-UI and Mobx
 
-You can use the [editor on GitHub](https://github.com/lolipopluxury/Diary-of-taro/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Taro is a framework for **miniprogram**. Before we start with Taro, it is necessary to learn what is miniprogram. The miniprogram is a kind of application which is avaliable without downloading. Actually it is a special form of website, and basicly consisted of html, css and javascript. Usually miniprograms are attached to the application provided by a specific company. This means that the original syntx of miniprograms on different platforms is different but with common regulations. We can find it easily on the doc center of [alipay mini](https://opendocs.alipay.com/mini/introduce) and [weapp mini](https://developers.weixin.qq.com/miniprogram/dev/framework/). Developers need to rewrite a new set of code when launching the app on a different platform. This increase the cost of both developing and maintain. Therefore, we need to find a way to develop on multi-platform.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lolipopluxury/Diary-of-taro/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
-
-### Header test
+Fortunately，Taro gives a solution. It can build into different kind of miniprogram. What's more, Taro is **react-style**. Thus, it is easy to learn and much more friendly than the original syntx provided officially. Of course, there are certain drawbacks of Taro. As a price of crossing platforms, it mainly supports the common features of different miniprogram. Some unique features like _rich editor_ performs quite terriblely in Taro. So it's important for developers to consider the requires of their application before using this framwork.
