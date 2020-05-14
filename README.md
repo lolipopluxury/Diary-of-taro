@@ -15,7 +15,55 @@ $ npm install -g @tarojs/cli
 # OR use yarn 
 $ yarn global add @tarojs/cli
 ```
-For developers in China, when errors associated with sass rise. please try after mirror-config-china installed
+For developers in China, when errors associated with sass rise, please try after mirror-config-china installed
 ```
 $ npm install -g mirror-config-china
+```
+Then init the project with 
+```
+$ taro init myApp
+```
+There are some options we need to notice
+
+This is wrting the introduction
+```
+PS D:\Taro> taro init myApp
+�👽 Taro v2.1.3
+
+Taro 即将创建一个新项目!
+Need help? Go and open issue: https://github.com/NervJS/taro/issues/new
+
+√ 拉取远程模板仓库成功！
+? 请输入项目介绍！
+```
+
+The next step is choosing whether using typescript. Even through typescript is more and more popular, in Taro 2.1, the team doesn't plan to rewrite the framework in typescript. Typescript is avaliable but not recommended.
+```
+PS D:\Taro> taro init myApp
+�👽 Taro v2.1
+
+Taro 即将创建一个新项目!
+Need help? Go and open issue: https://github.com/NervJS/taro/issues/new
+
+√ 拉取远程模板仓库成功！
+? 请输入项目介绍！ myApp
+? 是否需要使用 TypeScript ？ No
+```
+
+The third step is choosing CSS extension language. Taro-UI is a UI library provided by the same team of Taro, and it is written in sass. Thus, when we want to introduce Taro-UI into our project, we should use sass to make them compatible.  
+```
+PS D:\Taro> taro init myApp
+�👽 Taro v2.1
+
+Taro 即将创建一个新项目!
+Need help? Go and open issue: https://github.com/NervJS/taro/issues/new
+
+√ 拉取远程模板仓库成功！
+? 请输入项目介绍！ myApp
+? 是否需要使用 TypeScript ？ No
+? 请选择 CSS 预处理器（Sass/Less/Stylus） (Use arrow keys)
+> Sass 
+  Less 
+  Stylus
+  无
 ```
