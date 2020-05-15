@@ -125,15 +125,16 @@ Need help? Go and open issue: https://github.com/NervJS/taro/issues/new
 √ cd myApp, 执行 git init
 / 执行安装项目依赖 yarn install, 需要一会儿...
 ```
-## Day1 创建网络拦截器
+## Day1 创建网络请求
 
+小程序中必不可少的部分便是发送请求，在用户完成登录后，我们需要将token加入请求头，用以后续的请求。这里我们需要使用网络拦截器。Taro官方文档中提供了示例代码，我们在其基础上稍加改动便可以实现目标。
 ```
-import Taro from '@tarojs/taro'
-
 const interceptor = function (chain) {
   const requestParams = chain.requestParams
   const { method, data, url } = requestParams
+  //这里便是改动的地方，在登录时我们可以将token存储在storage里，并在这里取出。使用'Authorization'纯粹是因为后端这么写的，要保持一致
   const Authorization = Taro.getStorageSync('Authorization')
+  //将取到的token加入请求头
   requestParams.header = {...requestParams.header, Authorization}
   return chain.proceed(requestParams)
     .then(res => {
@@ -141,18 +142,12 @@ const interceptor = function (chain) {
     })
   }
 Taro.addInterceptor(interceptor)
+```
+接下来是完成网络请求。核心为Taro.request()，我们在此处进行封装。content-type的默认类型为'application/json'，对于不同类型的请求需要加以修改。在项目中调用请求时，使用的为下方三种示例。例如， const res = httpService.post()
+```
+import Taro from '@tarojs/taro'
 
 export default {
-  request(option, method = 'GET') {
-    return Taro.request({
-      ...option,
-      method,
-      header: {
-        'content-type': 'application/json',
-        ...option.header
-      }
-    })
-  },
   login(option, method = 'GET') {
     return Taro.request({
       ...option,
@@ -164,14 +159,9 @@ export default {
     })
   },
 
-  get(option) {
-    return this.request(option, 'GET')
-  },
-  post(option) {
-    return this.request(option, 'POST')
-  },
   weappLogin(option) {
     return this.login(option, 'POST')
   },
 }
 ```
+ [点击此处](https://github.com/lolipopluxury/Diary-of-taro/blob/master/README-EN.md)查看完整示例
