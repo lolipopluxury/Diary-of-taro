@@ -125,7 +125,7 @@ Need help? Go and open issue: https://github.com/NervJS/taro/issues/new
 √ cd myApp, 执行 git init
 / 执行安装项目依赖 yarn install, 需要一会儿...
 ```
-## Day1 创建网络请求
+## Day 1 创建网络请求
 
 小程序中必不可少的部分便是发送请求，在用户完成登录后，我们需要将token加入请求头，用以后续的请求。这里我们需要使用网络拦截器。Taro官方文档中提供了示例代码，我们在其基础上稍加改动便可以实现目标。
 ```
