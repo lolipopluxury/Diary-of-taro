@@ -164,4 +164,4 @@ export default {
   },
 }
 ```
- [点击此处](https://github.com/lolipopluxury/Diary-of-taro/blob/master/README-EN.md)查看完整示例
+ [点击此处](https://github.com/lolipopluxury/Diary-of-taro/blob/master/demonstration/src/services/httpService.js)查看完整示例
