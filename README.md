@@ -2,7 +2,7 @@
 
  [Click here](https://github.com/lolipopluxury/Diary-of-taro/blob/master/README-EN.md) to get English version
  
- **本日记主要用来记载第一次使用Taro开发小程序时踩过的坑，欢迎各位道友交流学习，本人邮箱i104j588@163.com**
+ **本日记主要用来记载初次使用Taro开发小程序时的经验和教训，欢迎各位道友交流学习，本人邮箱i104j588@163.com**
  
  **本文仅发布于GitHub，转载请注明出处**
  
